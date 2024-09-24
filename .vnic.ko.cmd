@@ -1,0 +1,1 @@
+cmd_/home/akihiro/sotuken/sagyou/kodamaken/vnic.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000 -T ./scripts/module-common.lds  --build-id  -o /home/akihiro/sotuken/sagyou/kodamaken/vnic.ko /home/akihiro/sotuken/sagyou/kodamaken/vnic.o /home/akihiro/sotuken/sagyou/kodamaken/vnic.mod.o ;  true
