@@ -8,6 +8,16 @@
     ```
 - vnicのコードを入れたファイルを名前は任意で作成（今回はvnic.c）
 - Makefileを作成
+    ```sh
+    obj-m += vnic.o
+
+    all:
+        make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+
+    clean:
+        make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+
+    ```
 - 念の為カーネルソースのインストールを確認。ディレクトリ内に`Makefile`や`Kconfig`があるか確認。
     ```sh
     ls /lib/modules/$(uname -r)/build
@@ -16,7 +26,7 @@
     ```sh
     make
     ```
-    いろいろなファイルが生成されるが、これによりカーネルモジュール`vnic.ko`というカーネルモジュールファイルが生成されているか確認する。
+    いろいろなファイルが生成されるが、これによりカーネルモジュール`vnic.ko`というカーネルモジュールファイルが生成されているか特に確認する。
 - カーネルモジュールをカーネルにロードする
     ```sh
     sudo insmod vnic.ko

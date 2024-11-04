@@ -10,13 +10,13 @@
 #include <linux/fcntl.h>
 #include <linux/poll.h>
 
-#define	PRINT(fmt, args...)	printk("Supervisor:" fmt, ## args)
+#define	PRINT(fmt, args...)	printk("VNIC-mizuno:" fmt, ## args)
 #define	ENABLE	1
 #define	POOL_SIZE	8
 #define	BUFF_SIZE	16
 #define	PACKET_SIZE	4096	
-#define	MODULE_NAME	"Supervisor"
-#define	DEV_NAME	"Supervisor"
+#define	MODULE_NAME	"VNIC-mizuno"
+#define	DEV_NAME	"VNIC-mizuno"
 
 static int pool_size=POOL_SIZE;
 module_param(pool_size, int, 0);
