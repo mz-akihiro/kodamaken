@@ -16,8 +16,8 @@
 #include <sys/ioctl.h>
 
 // 環境に合うようにインターフェース名を変更
-#define INTERFACE1 "enp1s0"  // 実際のNIC(送信先)
-#define INTERFACE2 "Supervisor" // 実際のvNIC(送信元)
+#define INTERFACE1 "enp0s31f6"  // 実際のNIC(送信先)
+#define INTERFACE2 "VNIC-mizuno" // 実際のvNIC(送信元)
 
 int soc1, soc2;
 int EndFlag = 0;
