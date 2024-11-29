@@ -78,10 +78,19 @@
     # キャッシュ削除で治らない場合同じサブネットに属していない可能性がある。/24などに注意して確認すべき
     ```
 
-- カーネルのフォワーディングを確認
+- カーネルのフォワーディングの無効化を確認
     ```sh
     # 1だと有効化されている
     cat /proc/sys/net/ipv4/ip_forward
+
+    #無効化方法
+    sudo vim /etc/sysctl.conf
+    [追記]net.ipv4.ip_forward = 0
+    ```
+
+- ネットワークマネージャーを止める
+    ```sh
+    sudo systemctl disable NetworkManager
     ```
 
 - arp確認方法
