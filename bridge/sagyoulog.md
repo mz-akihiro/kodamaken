@@ -86,6 +86,10 @@
     #無効化方法
     sudo vim /etc/sysctl.conf
     [追記]net.ipv4.ip_forward = 0
+    sudo sysctl -p /etc/sysctl.conf #設定を適用
+
+    #一時的な無効化方法
+    sudo sysctl -w net.ipv4.ip_forward=0
     ```
 
 - ネットワークマネージャーを止める
